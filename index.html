@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+    <link rel="icon" href="https://miro.medium.com/v2/resize:fit:1400/1*gXstEQkbFYxn_leg6zVTWQ.jpeg">
+</head>
+
+<body>
+    <section id="section-container">
+        <h2>Event Bubble Ready</h2>
+        <ul id="ul-container">
+            <h3>items parents</h3>
+            <li>item-1</li>
+            <li id="second-item">item-2 (Clickable log)</li>
+            <li>item-3</li>
+            <li>item-4</li>
+            <li>item-5</li>
+        </ul>
+    </section>
+
+
+
+    <script>
+        document.getElementById('second-item').addEventListener('click' , function (event) {
+            event.stopImmediatePropagation()
+            console.log('second item clicked');
+        })
+        document.getElementById('second-item').addEventListener('click' , function () {
+            console.log('second item clicked');
+        })
+        document.getElementById('second-item').addEventListener('click' , function () {
+            console.log('second item clicked');
+        })
+
+
+
+
+        // document.getElementById('ul-container').addEventListener('click', function () {
+        //     console.log('ul container clicked');
+        // })
+
+        // document.getElementById('section-container').addEventListener('click', function () {
+        //     console.log('section container clicked');
+        // })
+    </script>
+</body>
+
+</html>
